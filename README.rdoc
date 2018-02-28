@@ -24,8 +24,8 @@ To generate a table, provide an array of arrays (which are interpreted as rows):
   rows << ['Three', 3]
   table = Terminal::Table.new :rows => rows
 
-  # > puts table
-  #
+  puts table
+
   # +-------+---+
   # | One   | 1 |
   # | Two   | 2 |
@@ -60,8 +60,9 @@ To add separators between rows:
     t.add_row ['Three', 3]
   end
 
-  # > puts table
-  #
+
+  puts table
+
   # +-------+---+
   # | One   | 1 |
   # +-------+---+
@@ -80,8 +81,8 @@ Cells can handle multiline content:
     t.add_row ['Three', 3]
   end
 
-  # > puts table
-  #
+  puts table
+
   # +--------+---+
   # | One    | 1 |
   # +--------+---+
@@ -97,8 +98,8 @@ To add a head to the table:
 
   table = Terminal::Table.new :headings => ['Word', 'Number'], :rows => rows
 
-  # > puts table
-  #
+  puts table
+
   # +-------+--------+
   # | Word  | Number |
   # +-------+--------+
@@ -113,8 +114,8 @@ To add a title to the table:
 
   table = Terminal::Table.new :title => "Cheatsheet", :headings => ['Word', 'Number'], :rows => rows
 
-  # > puts table
-  #
+  puts table
+
   # +------------+--------+
   # |     Cheatsheet      |
   # +------------+--------+
@@ -131,8 +132,8 @@ To align the second column to the right:
 
   table.align_column(1, :right)
 
-  # > puts table
-  #
+  puts table
+
   # +-------+--------+
   # | Word  | Number |
   # +-------+--------+
@@ -145,8 +146,8 @@ To align an individual cell, you specify the cell value in a hash along the alig
 
   table << ["Four", {:value => 4.0, :alignment => :center}]
 
-  # > puts table
-  #
+  puts table
+
   # +-------+--------+
   # | Word  | Number |
   # +-------+--------+
@@ -162,8 +163,8 @@ To specify style options:
 
   table = Terminal::Table.new :headings => ['Word', 'Number'], :rows => rows, :style => {:width => 80}
 
-  # > puts table
-  #
+  puts table
+
   # +--------------------------------------+---------------------------------------+
   # | Word                                 | Number                                |
   # +--------------------------------------+---------------------------------------+
@@ -176,8 +177,8 @@ And change styles on the fly:
 
   table.style = {:width => 40, :padding_left => 3, :border_x => "=", :border_i => "x"}
 
-  # > puts table
-  #
+  puts table
+
   # x====================x=================x
   # |               Cheatsheet             |
   # x====================x=================x
@@ -197,8 +198,8 @@ You can also use styles to add a separator after every row:
     t.style = {:all_separators => true}
   end
 
-  # > puts table
-  #
+  puts table
+
   # +---+-------+
   # | 1 | One   |
   # +---+-------+
@@ -215,7 +216,8 @@ You can also use styles to disable top and bottom borders of the table
     t.style = { :border_top => false, :border_bottom => false }
   end
 
-  # > puts table
+  puts table
+
   # | id | name  |
   # +----+-------+
   # | 1  | One   |
